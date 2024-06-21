@@ -24,7 +24,7 @@
       </div>
     </div>
   </nav>
-   
+   <food food-items = "this is my first food item"></food>
     </div>
 </template>
 

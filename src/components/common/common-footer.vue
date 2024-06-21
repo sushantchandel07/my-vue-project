@@ -59,18 +59,24 @@
             </li>
           </ul>
         </div>
+       
       </footer>
     </div>
   </div>
+
     </div>
 </template>
 
 <script>
     export default {
-        name:"commonFooter"
+        name:"commonFooter",
     }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+
+.footer {
+    background: linear-gradient(184deg, rgba(0, 198, 251, 0.10) 3.94%, rgba(0, 91, 234, 0.10) 96.69%);
+}
 
 </style>

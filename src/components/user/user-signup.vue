@@ -4,7 +4,7 @@
       <div class="row justify-content-center g-1 gap-2">
         <div class="col col-sm-12 col-lg-7 form-img">
           <img
-            src=""
+            src="/src/assets/images/Group 1597882533 (1).png"
             alt="Signup Image"
           />
         </div>
@@ -15,7 +15,7 @@
               class="d-flex justify-content-center align-items-center flex-column"
             >
               <h3 class="fs-2 fw-bold">Signup to your account</h3>
-
+              <p>{{ message }}</p>
               <div class="mb-3">
                 <label
                   for="fname"
@@ -122,7 +122,6 @@
                   class="form-label text-secondary fw-bold fs-6"
                   >Country</label
                 >
-
                 <div class="login-input border d-flex p-2 align-items-center">
                   <img
                     src=""
@@ -308,7 +307,9 @@
                     class="link-primary link-offset-2 fw-bold link-underline-opacity-0"
                     >Sign In</a
                   >
+                  
                 </p>
+             
               </div>
             </div>
           </form>
@@ -320,8 +321,15 @@
 
 <script>
     export default {
-        name:"userSignup"
-    }
+        name:"userSignup",
+        props: [
+          "message"
+        ]
+   
+     
+    
+  }
+    
 </script>
 
 <style lang="scss" scoped>
