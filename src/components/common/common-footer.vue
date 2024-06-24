@@ -28,7 +28,6 @@
                 car</a>
             </li>
           </ul>
-
         </div>
 
         <div class="col mb-3">

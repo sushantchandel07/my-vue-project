@@ -15,7 +15,6 @@
               class="d-flex justify-content-center align-items-center flex-column"
             >
               <h3 class="fs-2 fw-bold">Signup to your account</h3>
-              <p>{{ message }}</p>
               <div class="mb-3">
                 <label
                   for="fname"

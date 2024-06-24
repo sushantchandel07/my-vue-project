@@ -3,7 +3,7 @@
     <commonHeader></commonHeader>
     <!-- <userSignup message = "this is my first message "></userSignup> -->
     <productData></productData>
-    <categoryData></categoryData>
+    <!-- <categoryData></categoryData> -->
     <commonFooter></commonFooter>
    
   </div>
@@ -13,13 +13,13 @@ import commonFooter from "./components/common/common-footer.vue";
 import commonHeader from "./components/common/common-header.vue";
 // import userSignup from "./components/user/user-signup.vue";
 import productData from "./components/products/product-data.vue";
-import categoryData from "./components/category/category-data.vue";
+// import categoryData from "./components/category/category-data.vue";
 export default {
   name: "App",
   components: {
     commonFooter,
     commonHeader,
-    categoryData,
+    // categoryData,
     productData
   },
 };

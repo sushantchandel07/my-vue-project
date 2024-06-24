@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <div></div>
-    <div class="d-flex flex-wrap">
+  <div class="d-flex">
+    <div class="sidebar">
+      <categoryData />
+    </div>
+    <div class="content d-flex flex-wrap">
       <div
         v-for="product in products"
         :key="product.id"
@@ -11,7 +13,7 @@
         <img
           :src="getProductImageUrl(product)"
           class="card-img-top"
-          alt="..."
+          alt="product-Images"
         />
         <div class="card-body">
           <h5 class="card-title">{{ product.title }}</h5>
@@ -19,7 +21,11 @@
             {{ product.description }}
           </p>
           <p class="card-text">${{ product.price }}</p>
-          <a href="#" class="btn btn-primary">Add to Cart</a>
+          <div class="btn-group">
+            <button class="btn btn-info">View</button>
+            <button class="btn btn-warning">Edit</button>
+            <button class="btn btn-danger">Delete</button>
+          </div>
         </div>
       </div>
     </div>
@@ -28,9 +34,14 @@
 
 <script>
 import { getProducts } from "../../services/productService";
+import categoryData from "../category/category-data.vue";
 
 export default {
   name: "productData",
+  components: {
+    categoryData,
+  },
+
   data() {
     return {
       products: [],
@@ -41,6 +52,7 @@ export default {
       return product.productimages[0].url;
     },
   },
+
   mounted() {
     getProducts()
       .then((products) => {
@@ -51,10 +63,71 @@ export default {
       });
   },
 };
+
 </script>
 
 <style scoped>
+.d-flex {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: #1e232f;
+  color: white;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.sidebar li:hover {
+  background-color: #575757;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  flex-grow: 1;
+}
+
 .card {
   margin: 1rem;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-body {
+  position: relative;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.card-body .btn-group {
+  display: none;
+}
+
+.card:hover .btn-group {
+  display: flex;
 }
 </style>

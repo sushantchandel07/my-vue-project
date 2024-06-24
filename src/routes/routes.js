@@ -10,5 +10,10 @@ export default new Router({
       name: "home",
       component: productData,
     },
+    {
+      path:"/products/{id}",
+      name:"products",
+      component:productData
+    }
   ],
 });
